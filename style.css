@@ -1,0 +1,63 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f1f5f9;
+}
+
+.font-display {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Custom scrollbar for chat view */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(20, 184, 166, 0.25);
+    border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(20, 184, 166, 0.5);
+}
+
+/* Ambient Glow Background Animation */
+.ambient-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.45;
+    z-index: 0;
+    pointer-events: none;
+    animation: floatGlow 12s infinite alternate ease-in-out;
+}
+@keyframes floatGlow {
+    0% { transform: translate(0px, 0px) scale(1); }
+    100% { transform: translate(30px, -40px) scale(1.15); }
+}
+
+/* Message typing indicator pulse */
+.typing-dot {
+    animation: typingAnimation 1.4s infinite ease-in-out both;
+}
+.typing-dot:nth-child(1) { animation-delay: 0s; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingAnimation {
+    0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+    40% { transform: scale(1); opacity: 1; }
+}
+
+/* Breathing Circle Animation */
+.breath-circle {
+    animation: breatheAnim 19s infinite ease-in-out;
+}
+@keyframes breatheAnim {
+    0%, 100% { transform: scale(1); }
+    21% { transform: scale(1.6); }
+    58% { transform: scale(1.6); }
+    100% { transform: scale(1); }
+}
